@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VitBlog</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="{% static 'modules/prism/prism.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <main class="main" id="top">
+        {% include 'navbar.html' %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible col-5" role="alert" id="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    <script src="{% static 'modules/popper/popper.min.js' %}"></script>
+    <script src="{% static 'modules/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'modules/anchorjs/anchor.min.js' %}"></script>
+    <script src="{% static 'modules/is/is.min.js' %}"></script>
+    <script src="{% static 'modules/lodash/lodash.min.js' %}"></script>
+    <script src="{% static 'modules/fontawesome/all.min.js' %}"></script>
+    <script src="{% static 'modules/prism/prism.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+</body>
+
+</html>

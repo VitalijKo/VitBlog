@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AGE/.idea/AGE.iml" filepath="$PROJECT_DIR$/../AGE/.idea/AGE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../EndSudoku/.idea/EndSudoku.iml" filepath="$PROJECT_DIR$/../EndSudoku/.idea/EndSudoku.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/VitBlog.iml" filepath="$PROJECT_DIR$/.idea/VitBlog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../VitGDB/.idea/VitGDB.iml" filepath="$PROJECT_DIR$/../VitGDB/.idea/VitGDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../VitWeather/.idea/VitWeather.iml" filepath="$PROJECT_DIR$/../VitWeather/.idea/VitWeather.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../VitTodo/server/.idea/server.iml" filepath="$PROJECT_DIR$/../VitTodo/server/.idea/server.iml" />
+    </modules>
+  </component>
+</project>
