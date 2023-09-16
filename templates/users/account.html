@@ -18,8 +18,8 @@
                                         <h5 class="fw-bold fs-2 text-200 mb-5 text-center">{{ profile.name }}</h5>
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
-                                                <a class="btn btn-danger rounded-pill my-2" href="{% url 'edit-account' %}">Edit Profile</a>
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:my-blog' %}">My Blog</a>
+                                                <a class="btn btn-danger rounded-pill my-2" href="{% url 'edit_account' %}">Edit Profile</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:my_blog' %}">My Blog</a>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                         <h6 class="fw-bold fs-1 text-200 my-3">Interests</h6>
                                     </div>
                                     <div class="col-sm-9 fs-1 fw-normal mb-0 text-600">
-                                        <a class="btn btn-primary rounded-pill my-2" href="{% url 'create-interest' %}">Add Interest</a>
+                                        <a class="btn btn-primary rounded-pill my-2" href="{% url 'create_interest' %}">Add Interest</a>
                                     </div>
                                 </div>
                                 {% for interest in profile.interest_set.all %}
@@ -80,8 +80,8 @@
                                         <p>{{ interest.description }}</p>
                                     </div>
                                     <div class="col fs-0 fw-normal mb-0 icon-group">
-                                        <a href="{% url 'update-interest' interest.slug %}"><span class="icon-item mr-btn"><i class="uil uil-edit"></i></span></a>
-                                        <a href="{% url 'delete-interest' interest.slug %}"><span class="icon-item"><i class="uil uil-times-circle"></i></span></a>
+                                        <a href="{% url 'update_interest' interest.slug %}"><span class="icon-item mr-btn"><i class="uil uil-edit"></i></span></a>
+                                        <a href="{% url 'delete_interest' interest.slug %}"><span class="icon-item"><i class="uil uil-times-circle"></i></span></a>
                                     </div>
                                 </div>
                                 {% endfor %}

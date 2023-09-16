@@ -19,7 +19,7 @@
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
                                                 {% if request.user.profile.id != profile.id %}
-                                                <form action="{% url 'follow-unfollow' profile.username %}" method="POST">
+                                                <form action="{% url 'follow' profile.username %}" method="POST">
                                                     {% csrf_token %}
                                                     {% if profile in user.profile.follows.all %}
                                                     <button class="btn btn-danger rounded-pill my-2 col-12" name="follow" value="unfollow" type="submit">
@@ -31,11 +31,11 @@
                                                     </button>
                                                     {% endif %}
                                                 </form>
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'create-message' profile.username %}">Message</a>
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:user-blog' profile.username %}">Users Blog</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'create_message' profile.username %}">Message</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:user_blog' profile.username %}">Users Blog</a>
                                                 {% else %}
                                                 <div class="col-12 d-grid">
-                                                    <a class="btn btn-danger rounded-pill my-2" href="{% url 'edit-account' %}">Edit Profile</a>
+                                                    <a class="btn btn-danger rounded-pill my-2" href="{% url 'edit_account' %}">Edit Profile</a>
                                                 </div>
                                                 {% endif %}
                                             </div>

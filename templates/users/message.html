@@ -18,7 +18,7 @@
                                             <hr>
                                             <div class="d-flex justify-content-between">
                                                 {% if message.sender %}
-                                                <span class="fs--1 fw-bold text-start"><a href="{% url 'user-profile' message.sender.username  %}" class="text-decoration-none text-start"><i class="uil uil-user-circle text-primary"></i> {{ message.name }}</a></span>
+                                                <span class="fs--1 fw-bold text-start"><a href="{% url 'user_profile' message.sender.username  %}" class="text-decoration-none text-start"><i class="uil uil-user-circle text-primary"></i> {{ message.name }}</a></span>
                                                 {% else %}
                                                 <span class="fw-bold fs--1 text-600 text-start">Sender: {{ message.name }}</span>
                                                 {% endif %}

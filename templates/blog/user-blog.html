@@ -19,7 +19,7 @@
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
                                                 {% if request.user.profile.id != profile.id %}
-                                                <form action="{% url 'follow-unfollow' profile.username %}" method="POST">
+                                                <form action="{% url 'follow' profile.username %}" method="POST">
                                                     {% csrf_token %}
                                                     {% if profile in user.profile.follows.all %}
                                                     <button class="btn btn-danger rounded-pill my-2 col-12" name="follow" value="unfollow" type="submit">
@@ -31,11 +31,11 @@
                                                     </button>
                                                     {% endif %}
                                                 </form>
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'create-message' profile.username %}">Message</a>
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'user-profile' profile.username %}">Profile</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'create_message' profile.username %}">Message</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'user_profile' profile.username %}">Profile</a>
                                                 {% else %}
                                                 <div class="col-12 d-grid">
-                                                    <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:create-post' %}">New Post</a>
+                                                    <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:create_post' %}">New Post</a>
                                                 </div>
                                                 {% endif %}
                                                 {% include 'tags-categories.html' %}
@@ -63,7 +63,7 @@
                                             <div class="d-flex justify-content-between">
                                                 <a class="text-decoration-none mt-2" href=""><span class="text-start">{{ post.category }}</span></a>
                                                 {% if request.user.profile.id == profile.id %}
-                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update-post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete-post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
+                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update_post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete_post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
                                                 {% endif %}
                                             </div>
                                         </div>

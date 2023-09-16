@@ -13,7 +13,7 @@
                                         {% csrf_token %}
                                         <div class="mb-3 mt-md-4">
                                             <div class="text-center">
-                                                <a href="{% url 'user-profile' recipient.username  %}" style="text-decoration: none"><i class="fa fa-arrow-circle-left mr-icon"></i>Back to Profile</a>
+                                                <a href="{% url 'user_profile' recipient.username  %}" style="text-decoration: none"><i class="fa fa-arrow-circle-left mr-icon"></i>Back to Profile</a>
                                             </div>
                                             {% if request.user.is_authenticated == False %}
                                             <div class="form-floating mb-3">

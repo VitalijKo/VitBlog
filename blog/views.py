@@ -47,7 +47,7 @@ def create_post(request):
 
                 post.tags.add(tag)
 
-            return redirect('blog:my-blog')
+            return redirect('blog:my_blog')
 
     context = {
         'form': form
@@ -74,7 +74,7 @@ def user_blog(request, username):
         'custom_range': custom_range
     }
 
-    return render(request, 'blog/user-blog.html', context)
+    return render(request, 'blog/user_blog.html', context)
 
 
 @login_required
@@ -127,7 +127,7 @@ def my_blog(request):
         'categories': categories
     }
 
-    return render(request, 'blog/my-blog.html', context)
+    return render(request, 'blog/my_blog.html', context)
 
 
 @login_required
@@ -150,7 +150,7 @@ def update_post(request, pk):
 
                 post.tags.add(tag)
 
-            return redirect('blog:my-blog')
+            return redirect('blog:my_blog')
 
     context = {
         'form': form,
@@ -169,7 +169,7 @@ def delete_post(request, pk):
     if request.method == 'POST':
         post.delete()
 
-        return redirect('blog:my-blog')
+        return redirect('blog:my_blog')
 
     context = {
         'object': post

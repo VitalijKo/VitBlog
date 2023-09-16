@@ -19,7 +19,7 @@
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
                                                 <div class="text-center">
-                                                    <a class="btn btn-primary rounded-pill my-2 col-9" href="{% url 'blog:my-blog' %}">My Blog</a>
+                                                    <a class="btn btn-primary rounded-pill my-2 col-9" href="{% url 'blog:my_blog' %}">My Blog</a>
                                                     <a class="btn btn-primary rounded-pill my-2 col-9" href="{% url 'blog:friends' %}">Friends</a>
                                                     <a class="btn btn-warning rounded-pill my-2 col-9" href="{% url 'blog:user_bookmarks' %}">Favourites</a>
                                                 </div>
@@ -69,7 +69,7 @@
                                             <div class="d-flex justify-content-between">
                                                 <a class="text-decoration-none mt-2" href=""><span class="text-start">{{ post.category }}</span></a>
                                                 {% if request.user.profile.id == post.owner.id %}
-                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update-post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete-post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
+                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update_post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete_post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
                                                 {% else %}
                                                 <span class="text-end mt-2">{{ post.published }}</span>
                                                 {% endif %}
@@ -85,7 +85,7 @@
                                                         </div>
                                                     </div>
                                                     <p class="text-200 fw-bold mt-3">
-                                                        <a class="text-decoration-none" href="{% url 'user-profile' post.owner.username %}">{{ post.owner.name }}</a>
+                                                        <a class="text-decoration-none" href="{% url 'user_profile' post.owner.username %}">{{ post.owner.name }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="col-md-9">

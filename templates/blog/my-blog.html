@@ -19,7 +19,7 @@
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
                                                 <div class="text-center">
-                                                    <a class="btn btn-primary rounded-pill my-2 col-9" href="{% url 'blog:create-post' %}">New Post</a>
+                                                    <a class="btn btn-primary rounded-pill my-2 col-9" href="{% url 'blog:create_post' %}">New Post</a>
                                                     <a class="btn btn-warning rounded-pill my-2 col-9" href="{% url 'blog:friends' %}">Favourites</a>
                                                 </div>
                                                 {% include 'tags-categories.html' %}
@@ -46,7 +46,7 @@
                                         <div class="card-header fs--1 fw-bold">
                                             <div class="d-flex justify-content-between">
                                                 <a class="text-decoration-none mt-2" href=""><span class="text-start">{{ post.category }}</span></a>
-                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update-post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete-post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
+                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update_post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete_post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
                                             </div>
                                         </div>
                                         <div class="card-body px-4 py-4">

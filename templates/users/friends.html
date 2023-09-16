@@ -8,14 +8,14 @@
             </h6>
             <div class="profile-image-wrapper">
                 <div class="profile-image">
-                    <a href="{% url 'user-profile' profile.username %}">
+                    <a href="{% url 'user_profile' profile.username %}">
                         <img src="{{ profile.image.url }}" alt="profile" />
                     </a>
                 </div>
             </div>
             <div class="col-12 d-grid">
                 <div class="text-center">
-                    <form action="{% url 'follow-unfollow' profile.username %}" method="POST">
+                    <form action="{% url 'follow' profile.username %}" method="POST">
                         {% csrf_token %}
                         {% if profile in user.profile.follows.all %}
                         <button class="btn btn-danger rounded-pill my-2 col-12 p-2" name="follow" value="unfollow" type="submit">

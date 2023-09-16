@@ -19,9 +19,9 @@
                                         <div class="text-center">
                                             <div class="col-12 d-grid">
                                                 {% if request.user.profile.id != profile.id %}
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:create-post' %}">New Post</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:create_post' %}">New Post</a>
                                                 {% else %}
-                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:user-blog' post.owner.username %}">Users Blog</a>
+                                                <a class="btn btn-primary rounded-pill my-2" href="{% url 'blog:user_blog' post.owner.username %}">Users Blog</a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -44,7 +44,7 @@
                                             <div class="d-flex justify-content-between">
                                                 <a class="text-decoration-none mt-2" href=""><span class="text-start">{{ post.category }}</span></a>
                                                 {% if request.user.profile.id == post.owner.id %}
-                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update-post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete-post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
+                                                <span class="text-end icon-group"><a class="icon-item" href="{% url 'blog:update_post' post.id %}"><i class="uil uil-edit fs--1"></i></a><a class="icon-item" href="{% url 'blog:delete_post' post.id %}"><i class="uil uil-times-circle fs--1"></i></a></span>
                                                 {% else %}
                                                 <span class="text-end mt-2">{{ post.published }}</span>
                                                 {% endif %}
@@ -90,7 +90,7 @@
                                                 <div class="col-md-3">
                                                     <div class="blog-image-wrapper mt-2">
                                                         <div class="blog-image">
-                                                            <a href="{% url 'user-profile' comment.owner.username %}">
+                                                            <a href="{% url 'user_profile' comment.owner.username %}">
                                                                 <img src="{{ comment.owner.image.url }}" alt="profile" />
                                                             </a>
                                                         </div>

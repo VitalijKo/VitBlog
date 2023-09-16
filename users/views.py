@@ -13,7 +13,7 @@ from .utils import paginate, search_profiles
 
 
 
-def landing(request):
+def home(request):
     if request.user.is_authenticated:
         return redirect('profiles')
 
@@ -27,10 +27,10 @@ def landing(request):
         'custom_range': custom_range
     }
 
-    return render(request, 'landing.html', context)
+    return render(request, 'home.html', context)
 
 
-def landing_login(request):
+def home_login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -50,7 +50,7 @@ def landing_login(request):
         else:
             messages.error(request, 'Неверное имя пользователя или пароль')
 
-    return redirect('landing')
+    return redirect('home')
 
 
 def profiles(request):
@@ -118,7 +118,7 @@ def signup_user(request):
 
             login(request, user)
 
-            return redirect('edit-account')
+            return redirect('edit_account')
 
         else:
             messages.success(request, 'Во время регистрации возникла ошибка')
@@ -145,7 +145,7 @@ def user_profile(request, username):
         'custom_range': custom_range
     }
 
-    return render(request, 'users/user-profile.html', context)
+    return render(request, 'users/user_profile.html', context)
 
 
 @login_required
@@ -337,7 +337,7 @@ def create_message(request, username):
 
             messages.success(request, 'Сообщение успешно отправлено!')
 
-            return redirect('user-profile', username=recipient.username)
+            return redirect('user_profile', username=recipient.username)
 
     context = {
         'recipient': recipient,
