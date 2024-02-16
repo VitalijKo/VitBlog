@@ -74,7 +74,7 @@ def vote(request, question_id):
         user_choice = question.choice_set.get(pk=request.POST['choice'])
 
         if not question.user_voted(request.user):
-            messages.error(request, 'Вы уже голосовали в этом опросе.')
+            messages.error(request, 'You have already voted in this poll')
 
             context = {
                 'question': question,
@@ -92,7 +92,7 @@ def vote(request, question_id):
 
             return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
     except (KeyError, UnboundLocalError):
-        messages.error(request, 'Вы не выбрали вариант ответа!')
+        messages.error(request, 'You did not select an answer choice')
 
         context = {
             'question': question

@@ -39,7 +39,7 @@
     </div>
     <div class="text-center">
         {% for tag in post.tags.all %}
-        <a href="{% url 'blog:by_tag" tag.slug %}"><span class="badge rounded-pill text-400 pill-bg">{{ tag.name }}</span></a>
+        <a href="{% url 'blog:tag" tag.slug %}"><span class="badge rounded-pill text-400 pill-bg">{{ tag.name }}</span></a>
         {% endfor %}
     </div>
     {% if post.number_of_comments %}

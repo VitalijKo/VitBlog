@@ -34,9 +34,9 @@ class ProfileForm(ModelForm):
             'username': 'Имя пользователя',
             'city': 'Город',
             'profession': 'Профессия',
-            'summary': 'Немного о себе',
-            'about': 'Подробнее о себе',
-            'image': 'Изменить фото профиля'
+            'summary': 'О себе',
+            'about': 'Описание',
+            'image': 'Фото профиля'
         }
         widgets = {
             'image': FileInput()

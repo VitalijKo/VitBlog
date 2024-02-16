@@ -70,7 +70,7 @@ def grade_question(request, quiz_id, question_id):
 
     context = {
         'question': question,
-        'error_message': 'Вы уже отвечали на этот вопрос.'
+        'error_message': 'You have already answered this question'
     }
 
     try:

@@ -95,7 +95,7 @@ def post(request, post_slug):
         comment.owner = request.user.profile
         comment.save()
 
-        messages.success(request, 'Ваш комментарий появится после проверки модератором')
+        messages.success(request, 'Your comment will appear after verification by a moderator')
 
         return redirect('blog:post', post_slug=post.slug)
 
@@ -127,7 +127,7 @@ def my_blog(request):
         'categories': categories
     }
 
-    return render(request, 'blog/my_blog.html', context)
+    return render(request, 'blog/my-blog.html', context)
 
 
 @login_required

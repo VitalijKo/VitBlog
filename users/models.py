@@ -12,7 +12,7 @@ class Profile(models.Model):
     email = models.EmailField('Email', max_length=64, blank=True, null=True)
     city = models.CharField('Город', max_length=32, blank=True, null=True)
     profession = models.CharField('Профессия', max_length=128, blank=True, null=True)
-    summary = models.CharField('Bio', max_length=128, blank=True, null=True)
+    summary = models.CharField('О себе', max_length=128, blank=True, null=True)
     about = models.TextField('Описание', blank=True, null=True)
     vk = models.CharField('VK', max_length=128, default='https://vk.com')
     github = models.CharField('Github', max_length=128, default='https://github.com')

@@ -38,7 +38,7 @@ def home_login(request):
         try:
             user = User.objects.get(username=username)
         except:
-            messages.error(request, 'Такого пользователя нет в системе')
+            messages.error(request, 'This user does not exist')
 
         user = authenticate(request, username=username, password=password)
 
@@ -48,7 +48,7 @@ def home_login(request):
             return redirect(request.GET['next'] if 'next' in request.GET else 'account')
 
         else:
-            messages.error(request, 'Неверное имя пользователя или пароль')
+            messages.error(request, 'Invalid user name or password')
 
     return redirect('home')
 
@@ -78,7 +78,7 @@ def loginUser(request):
         try:
             user = User.objects.get(username=username)
         except:
-            messages.error(request, 'Такого пользователя нет в системе')
+            messages.error(request, 'This user does not exist')
 
         user = authenticate(request, username=username, password=password)
 
@@ -88,7 +88,7 @@ def loginUser(request):
             return redirect(request.GET['next'] if 'next' in request.GET else 'account')
 
         else:
-            messages.error(request, 'Неверное имя пользователя или пароль')
+            messages.error(request, 'Invalid username or password')
 
     return render(request, 'users/auth.html')
 
@@ -96,7 +96,7 @@ def loginUser(request):
 def logout_user(request):
     logout(request)
 
-    messages.info(request, 'Вы вышли из учетной записи')
+    messages.info(request, 'You have logged out of your account')
 
     return redirect('login')
 
@@ -114,14 +114,14 @@ def signup_user(request):
             user.username = user.username.lower()
             user.save()
 
-            messages.success(request, 'Аккаунт успешно создан!')
+            messages.success(request, 'Account created')
 
             login(request, user)
 
             return redirect('edit_account')
 
         else:
-            messages.success(request, 'Во время регистрации возникла ошибка')
+            messages.error(request, 'An error occurred during sign up')
 
     context = {
         'page': page,
@@ -219,12 +219,12 @@ def create_interest(request):
             try:
                 interest.save()
 
-                messages.success(request, 'Интерес добавлен')
+                messages.success(request, 'Interest added')
 
                 return redirect('account')
 
             except IntegrityError:
-                form.add_error('name', 'У вас уже есть интерес с таким именем и слагом')
+                form.add_error('name', 'You already have that interest')
 
     context = {
         'form': form
@@ -247,7 +247,7 @@ def update_interest(request, interest_slug):
         if form.is_valid():
             form.save()
 
-            messages.success(request, 'Интерес успешно обновлен')
+            messages.success(request, 'Interest updated')
 
             return redirect('account')
 
@@ -267,7 +267,7 @@ def delete_interest(request, interest_slug):
     if request.method == 'POST':
         interest.delete()
 
-        messages.success(request, 'Интерес успешно удален')
+        messages.success(request, 'Interest deleted')
 
         return redirect('account')
 
@@ -335,7 +335,7 @@ def create_message(request, username):
 
             message.save()
 
-            messages.success(request, 'Сообщение успешно отправлено!')
+            messages.success(request, 'Message sent')
 
             return redirect('user_profile', username=recipient.username)
 
